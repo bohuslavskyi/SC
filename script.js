@@ -184,8 +184,6 @@ function badgeFunc() {
 
     if (Array.isArray(searchedItems)) {
 
-        // $('input').val(searchedItems[searchedItems.length - 1]);
-
         searchedItems.forEach(function (el) {
             $("<span/>")
                 .addClass('badge')
@@ -196,13 +194,14 @@ function badgeFunc() {
                 })
                 .appendTo(".badgeWrap");
         })
-        $(" <i class='close'>x</i>")
-            .click(function (e) {
+
+        $(" <i class='close'>x</i>").click(function (e) {
                 list.remove(this.parentElement.childNodes[0].data);
                 badgeFunc()
                 e.preventDefault();
                 event.stopPropagation()
             })
+
             .appendTo(".badge");
     }
 
