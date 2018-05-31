@@ -84,11 +84,7 @@ function nextPage() {
     bindList();
 }
 
-
-// Use the SoundCloud API to allow the user to search for anything entered in the
-// search box.
-function search() {
-    query = document.getElementById("query").value;
+function cookieFunc() {
 
     cookieList = function (cookieName) {
 //When the cookie is saved the items will be a comma seperated string
@@ -134,7 +130,13 @@ function search() {
     if(query != ""){
         list.add(query);
     }
+}
 
+// Use the SoundCloud API to allow the user to search for anything entered in the
+// search box.
+function search() {
+    query = document.getElementById("query").value;
+    cookieFunc();
 
     SC.get('/tracks', {
         q: query, limit: 100
